@@ -5,20 +5,6 @@ Mubtasim Ahmed Rakheen, mubtasimahmed.rakheen@mavs.uta.edu, 817-449-4705
 Abbas Zaidi, axz5675@mavs.uta.edu
 Asad Mirza, ahm7395@mavs.uta.edu
 
-Changes we made to our project design: 
-- Instead of possibly spawning clouds every three seconds, our team chose to spawn a maximum of 
-  seven clouds with varying speeds at all times in a playthrough to make the game more visually
-  appealing and challenging.
-
-- Our team also chose to change the time that the background changes, so the background of a game
-  playthrough changes a lot more frequently now.
-
-Incomplete features:
-- No game audio
-- No game mute/unmute audio option for the 'Settings' screen.
-- Choosing a character during the sign up process. Instead, all newly created profiles will
-  have the blue player character as their starting character.
-
 Valid login information for one of the profiles that we made:
 email: fal_user@email.com
 password: 12345
