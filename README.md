@@ -1,12 +1,15 @@
 # Fast-as-Light
-Daniel Duy Phan, danielduy.phan@mavs.uta.edu, 682-812-4404
-Joseph Salas-Leon, jjs3197@mavs.uta.edu, 817-823-9258, 
-Mubtasim Ahmed Rakheen, mubtasimahmed.rakheen@mavs.uta.edu, 817-449-4705
-Abbas Zaidi, axz5675@mavs.uta.edu
-Asad Mirza, ahm7395@mavs.uta.edu
+-----------------------------------------------------------------------------------------------------------------------------------------
+## Project Members:
+---------------------------------------------------------------------------------------------------------------------------------------
+### Mubtasim Ahmed Rakheen, mubtasimahmed.rakheen@mavs.uta.edu, mrakheen10@gmail.com, 817-449-4705
+### Daniel Duy Phan, danielduy.phan@mavs.uta.edu, 682-812-4404
+### Joseph Salas-Leon, jjs3197@mavs.uta.edu, 817-823-9258, 
+### Abbas Zaidi, axz5675@mavs.uta.edu
+##
 
 Valid login information for one of the profiles that we made:
-email: fal_user@email.com
+email: fal_user@email.com,
 password: 12345
 
 Sources Used:
