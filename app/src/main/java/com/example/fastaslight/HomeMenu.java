@@ -6,6 +6,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -24,6 +25,7 @@ public class HomeMenu extends AppCompatActivity implements View.OnClickListener
     public static String key;
     public static DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     public static List<Bitmap> environments = new ArrayList<>();
+    private MediaPlayer mediaPlayer;
 
     /*
         Initializes the visuals of the Home Menu and sets the touch screen functionality
@@ -34,6 +36,10 @@ public class HomeMenu extends AppCompatActivity implements View.OnClickListener
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home_menu);
+
+        mediaPlayer = MediaPlayer.create(this, R.raw.main_music);
+        // Call the playMusic method
+        playMusic(null);
 
         Point point = new Point();
         getDisplay().getRealSize(point);
@@ -95,5 +101,22 @@ public class HomeMenu extends AppCompatActivity implements View.OnClickListener
         {
             startActivity(new Intent(this, Settings.class));
         }
+    }
+
+    public void playMusic(View view) {
+        // Start playing the music
+        mediaPlayer.setLooping(true);
+        mediaPlayer.start();
+    }
+
+    public void pauseMusic(View view) {
+        // Pause the music
+        mediaPlayer.pause();
+    }
+
+    public void stopMusic(View view) {
+        // Stop and release the MediaPlayer resources
+        mediaPlayer.stop();
+        mediaPlayer.release();
     }
 }
