@@ -1,5 +1,6 @@
 package com.example.fastaslight;
 
+import static com.example.fastaslight.HomeMenu.user;
 import static com.example.fastaslight.StartPlaythrough.navigationBarHeight;
 
 import android.content.Intent;
@@ -7,7 +8,9 @@ import android.content.res.Resources;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
+import android.media.MediaPlayer;
 import android.view.SurfaceView;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,6 +114,7 @@ public class Playthrough extends SurfaceView implements Runnable {
     //GameLoop
     @Override
     public void run() {
+
         while (isPlaying) {
             update();
             playthrough.runOnUiThread(new Runnable() {
@@ -239,7 +243,9 @@ public class Playthrough extends SurfaceView implements Runnable {
             if (Rect.intersects(bullet.getCollisionShape(), player.getCollisionShape()) && !bullet.shotByPlayer) {
                 bullet.y = screenY + 1;
                 player.health--;
-
+                if(user.getAudio().equals("ON")){
+                    HomeMenu.playSoundEffect(null);
+                }
                 if (player.health < 1)
                 {
                     isGameOver = true;
@@ -341,6 +347,9 @@ public class Playthrough extends SurfaceView implements Runnable {
             {
                 //if enemy touches player decrease player health
                 player.health--;
+                if(user.getAudio().equals("ON")){
+                    HomeMenu.playSoundEffect(null);
+                }
                 //move enemy position off screen
                 enemy.y = screenY;
                 //if player health is less than 1 then Game Over
@@ -405,6 +414,9 @@ public class Playthrough extends SurfaceView implements Runnable {
             {
                 //if plane touches player decrease player health
                 player.health--;
+                if(user.getAudio().equals("ON")){
+                    HomeMenu.playSoundEffect(null);
+                }
                 //move plane position off screen
                 if (!plane.flipped) {
                     plane.x = -plane.width;
