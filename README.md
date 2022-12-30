@@ -22,13 +22,13 @@
 ##
 
 
-## PROJECT MEMBERS:
+#### PROJECT MEMBERS:
 ---------------------------------------------------------------------------------------------------------------------------------------
-### Mubtasim Ahmed Rakheen, mubtasimahmed.rakheen@mavs.uta.edu, mrakheen10@gmail.com, 817-449-4705
-### Daniel Duy Phan, danielduy.phan@mavs.uta.edu, 682-812-4404
-### Joseph Salas-Leon, jjs3197@mavs.uta.edu, 817-823-9258, 
-### Abbas Zaidi, axz5675@mavs.uta.edu
-##
+##### Mubtasim Ahmed Rakheen, mubtasimahmed.rakheen@mavs.uta.edu, mrakheen10@gmail.com, 817-449-4705
+##### Daniel Duy Phan, danielduy.phan@mavs.uta.edu, 682-812-4404
+##### Joseph Salas-Leon, jjs3197@mavs.uta.edu, 817-823-9258, 
+##### Abbas Zaidi, axz5675@mavs.uta.edu
+####
 
 Valid login information for one of the profiles that we made:
 email: fal_user@email.com,
@@ -51,6 +51,9 @@ https://developer.android.com/reference/android/widget/TextView
 https://developer.android.com/reference/android/widget/ScrollView
 
 
+## PROJECT SCREENSHOTS:
+---------------------------------------------------------
+
 ![image](https://user-images.githubusercontent.com/53326887/210106050-3f354af2-f43f-4601-9aee-c9d951d07f7f.png)
 
 ![image](https://user-images.githubusercontent.com/53326887/210105446-89bf81db-c597-4d55-a8b5-dc31717e63e5.png)
@@ -63,6 +66,7 @@ https://developer.android.com/reference/android/widget/ScrollView
 
 ![image](https://user-images.githubusercontent.com/53326887/210106143-24c96810-d7d9-4ef8-a48e-3aef411efe2d.png)
 
+##
 
 
 
