@@ -4,9 +4,6 @@ import static com.example.fastaslight.HomeMenu.database;
 import static com.example.fastaslight.HomeMenu.key;
 import static com.example.fastaslight.HomeMenu.user;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
@@ -14,6 +11,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,14 +25,12 @@ import java.util.Map;
 
 public class Settings extends AppCompatActivity implements View.OnClickListener{
 
-    private String newusername, newpassword, newpasswordre, userKey;
+    private String newusername;
+    private String newpassword;
+    private String newpasswordre;
     TextView error, error1;
-    String emaildb, usernamedb, passworddb;
     private TextView newusernametext, newpasswordtext, newpasswordretext;
-    private ImageButton Soundbutton;
-    private Drawable buttonIcon;
-    int resourceId;
-    private int rank;
+    private ImageButton Soundbutton, Soundbutton2;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,36 +44,48 @@ public class Settings extends AppCompatActivity implements View.OnClickListener{
         error1.setVisibility(View.GONE);
         findViewById(R.id.submitsignup50).setOnClickListener(this);
         Soundbutton = findViewById(R.id.soundButton);
-        buttonIcon = Soundbutton.getDrawable();
-        Drawable.ConstantState constantState = buttonIcon.getConstantState();
-        resourceId = constantState.getChangingConfigurations();
         Soundbutton.setOnClickListener(this);
+        Soundbutton2 = findViewById(R.id.muteButton);
+        Soundbutton2.setOnClickListener(this);
+
+        if(user.getAudio().equals("ON")){
+            Soundbutton2.setVisibility(View.INVISIBLE);
+            Soundbutton.setVisibility(View.VISIBLE);
+            Soundbutton2.setEnabled(false);
+            Soundbutton.setEnabled(true);
+        }
+        if(user.getAudio().equals("OF")){
+            Soundbutton.setVisibility(View.INVISIBLE);
+            Soundbutton2.setVisibility(View.VISIBLE);
+            Soundbutton.setEnabled(false);
+            Soundbutton2.setEnabled(true);
+        }
 
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageButton close_profile = findViewById(R.id.close_icon_profile999);
         close_profile.setOnClickListener(this);
     }
-    public void changetomuteIcon(){
-        Soundbutton.setImageResource(R.drawable.mute_icon);
-    }
-    public void changetosoundIcon(){
-        Soundbutton.setImageResource(R.drawable.sound_icon);
-    }
-    public void onClick(View view) {
-        //Sound Icon visible-----
-        if(view.getId() == R.id.soundButton && resourceId == R.drawable.sound_icon){
-            changetomuteIcon();
-            HomeMenu.pauseMusic(null);
-        }
-        //Mute Icon visible-----
-        if(view.getId() == R.id.soundButton && resourceId == R.drawable.mute_icon){
-            changetosoundIcon();
-            HomeMenu.playMusic(null);
-        }
 
+    public void onClick(View view) {
+        if(view.getId() == R.id.soundButton){
+            HomeMenu.pauseMusic(null);
+            user.setAudioOFF();
+            Soundbutton.setVisibility(view.INVISIBLE);
+            Soundbutton2.setVisibility(view.VISIBLE);
+            Soundbutton.setEnabled(false);
+            Soundbutton2.setEnabled(true);
+        }
+        if(view.getId() == R.id.muteButton){
+            HomeMenu.playMusic(null);
+            user.setAudioON();
+            Soundbutton2.setVisibility(view.INVISIBLE);
+            Soundbutton.setVisibility(view.VISIBLE);
+            Soundbutton2.setEnabled(false);
+            Soundbutton.setEnabled(true);
+        }
         if (view.getId() == R.id.close_icon_profile999)
         {
             finish();
-            startActivity(new Intent(this, HomeMenu.class));
+            //startActivity(new Intent(this, HomeMenu.class));
         }
         if (view.getId() == R.id.submitsignup50) {
             newusername = newusernametext.getText().toString();
@@ -90,7 +100,6 @@ public class Settings extends AppCompatActivity implements View.OnClickListener{
             else
             {
                 DatabaseReference users = database.child("User");
-                DatabaseReference Leader = database.child("Leaderboard");
                 if(newusername.isEmpty())
                 {
                     if(newpassword.equals(newpasswordre))

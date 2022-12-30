@@ -74,7 +74,8 @@ public class Leaderboard extends AppCompatActivity implements View.OnClickListen
     {
         if (clicked_button.getId() == R.id.close_icon_leaderboard)
         {
-            startActivity(new Intent(this, HomeMenu.class));
+            finish();
+            //startActivity(new Intent(this, HomeMenu.class));
         }
     }
 

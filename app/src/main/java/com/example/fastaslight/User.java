@@ -8,6 +8,7 @@ public class User {
     private int rank ;
     private String player_character;
     private int ProfileID;
+    private String audio = "ON";
 
     User() {}
 
@@ -55,4 +56,7 @@ public class User {
     public void setUser_name(String user_name){
         this.user_name = user_name;
     }
+    public void setAudioON(){this.audio = "ON";}
+    public void setAudioOFF(){this.audio ="OF";}
+    public String getAudio(){return audio;}
 }

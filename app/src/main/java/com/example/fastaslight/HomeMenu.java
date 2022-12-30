@@ -39,7 +39,9 @@ public class HomeMenu extends AppCompatActivity implements View.OnClickListener
 
         mediaPlayer = MediaPlayer.create(this, R.raw.main_music);
         // Call the playMusic method
-        playMusic(null);
+        if(user.getAudio().equals("ON")){
+            playMusic(null);
+        }
 
         Point point = new Point();
         getDisplay().getRealSize(point);
@@ -105,8 +107,8 @@ public class HomeMenu extends AppCompatActivity implements View.OnClickListener
 
     public static void playMusic(View view) {
         // Start playing the music
-        mediaPlayer.setLooping(true);
         mediaPlayer.start();
+        mediaPlayer.setLooping(true);
     }
 
     public static void pauseMusic(View view) {
@@ -114,9 +116,4 @@ public class HomeMenu extends AppCompatActivity implements View.OnClickListener
         mediaPlayer.pause();
     }
 
-    public static void stopMusic(View view) {
-        // Stop and release the MediaPlayer resources
-        mediaPlayer.stop();
-        mediaPlayer.release();
-    }
 }
