@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -28,6 +29,9 @@ public class Settings extends AppCompatActivity implements View.OnClickListener{
     TextView error, error1;
     String emaildb, usernamedb, passworddb;
     private TextView newusernametext, newpasswordtext, newpasswordretext;
+    private ImageButton Soundbutton;
+    private Drawable buttonIcon;
+    int resourceId;
     private int rank;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,11 +45,33 @@ public class Settings extends AppCompatActivity implements View.OnClickListener{
         error.setVisibility(View.GONE);
         error1.setVisibility(View.GONE);
         findViewById(R.id.submitsignup50).setOnClickListener(this);
+        Soundbutton = findViewById(R.id.soundButton);
+        buttonIcon = Soundbutton.getDrawable();
+        Drawable.ConstantState constantState = buttonIcon.getConstantState();
+        resourceId = constantState.getChangingConfigurations();
+        Soundbutton.setOnClickListener(this);
 
         @SuppressLint({"MissingInflatedId", "LocalSuppress"}) ImageButton close_profile = findViewById(R.id.close_icon_profile999);
         close_profile.setOnClickListener(this);
     }
+    public void changetomuteIcon(){
+        Soundbutton.setImageResource(R.drawable.mute_icon);
+    }
+    public void changetosoundIcon(){
+        Soundbutton.setImageResource(R.drawable.sound_icon);
+    }
     public void onClick(View view) {
+        //Sound Icon visible-----
+        if(view.getId() == R.id.soundButton && resourceId == R.drawable.sound_icon){
+            changetomuteIcon();
+            HomeMenu.pauseMusic(null);
+        }
+        //Mute Icon visible-----
+        if(view.getId() == R.id.soundButton && resourceId == R.drawable.mute_icon){
+            changetosoundIcon();
+            HomeMenu.playMusic(null);
+        }
+
         if (view.getId() == R.id.close_icon_profile999)
         {
             finish();

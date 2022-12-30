@@ -168,6 +168,7 @@
         app:layout_constraintVertical_bias="0.01"
         app:srcCompat="@drawable/close_icon_profile" />
 
+
     <ImageButton
         android:id="@+id/soundButton"
         android:layout_width="82dp"
@@ -180,6 +181,6 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/soundicon" />
+        app:srcCompat="@drawable/sound_icon"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

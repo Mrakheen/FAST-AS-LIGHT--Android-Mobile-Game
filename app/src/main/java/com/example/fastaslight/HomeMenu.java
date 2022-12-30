@@ -25,7 +25,7 @@ public class HomeMenu extends AppCompatActivity implements View.OnClickListener
     public static String key;
     public static DatabaseReference database = FirebaseDatabase.getInstance().getReference();
     public static List<Bitmap> environments = new ArrayList<>();
-    private MediaPlayer mediaPlayer;
+    private static MediaPlayer mediaPlayer;
 
     /*
         Initializes the visuals of the Home Menu and sets the touch screen functionality
@@ -103,18 +103,18 @@ public class HomeMenu extends AppCompatActivity implements View.OnClickListener
         }
     }
 
-    public void playMusic(View view) {
+    public static void playMusic(View view) {
         // Start playing the music
         mediaPlayer.setLooping(true);
         mediaPlayer.start();
     }
 
-    public void pauseMusic(View view) {
+    public static void pauseMusic(View view) {
         // Pause the music
         mediaPlayer.pause();
     }
 
-    public void stopMusic(View view) {
+    public static void stopMusic(View view) {
         // Stop and release the MediaPlayer resources
         mediaPlayer.stop();
         mediaPlayer.release();
