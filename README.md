@@ -5,6 +5,7 @@
 -------------------------------------------------------------------------
 ### >> Project Co-ordination
 ### >> Developemnt of project Idea 
+### >> Creating GUI graphics
 ### >> Coding of Leaderboard feature 
 ### >> Coding of Profile and Change Character feature 
 ### >> Coding of some parts of Sign up feature 
