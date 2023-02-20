@@ -67,6 +67,12 @@ https://developer.android.com/reference/android/widget/ScrollView
 
 ![image](https://user-images.githubusercontent.com/53326887/210106143-24c96810-d7d9-4ef8-a48e-3aef411efe2d.png)
 
+![image](https://user-images.githubusercontent.com/53326887/220188177-084015ed-1361-4062-ac60-db6a4cba3999.png)
+
+![image](https://user-images.githubusercontent.com/53326887/220188288-432f563b-a1d7-48a9-94fe-45d0b3538ad8.png)
+
+![image](https://user-images.githubusercontent.com/53326887/220188358-3b1b51be-f17b-4a24-bf2e-84f45b8b3542.png)
+
 ##
 
 
